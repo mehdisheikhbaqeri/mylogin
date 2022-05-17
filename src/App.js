@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import LoginForm from "./components/LoginForm";
 
 function App() {
   const adminUser = {
@@ -19,9 +20,17 @@ function App() {
 
   return (
     <div className="App">
-      <p>{(user.email !="")? (
-        
-      )}</p>
+      {user.email != "" ? (
+        <div className="welcome">
+          <h2>
+            Welcome,<span>{user.name}</span>
+          </h2>
+          <button>Logout</button>
+        </div>
+      ) : (
+        <LoginForm />
+      )}
+      )
     </div>
   );
 }
