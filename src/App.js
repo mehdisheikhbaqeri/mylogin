@@ -20,7 +20,7 @@ function App() {
 
   return (
     <div className="App">
-      {user.email != "" ? (
+      {user.email !== "" ? (
         <div className="welcome">
           <h2>
             Welcome,<span>{user.name}</span>
@@ -28,7 +28,7 @@ function App() {
           <button>Logout</button>
         </div>
       ) : (
-        <LoginForm />
+        <LoginForm Login={Login} error={error} />
       )}
       )
     </div>
